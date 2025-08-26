@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday, Nurfaiz! 🎉</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --navy: #0B2A38;
+            --royal-blue: #1F6FEB;
+            --charcoal: #1C1F24;
+            --silver: #D1D5DB;
+            --gold: #F2C14E;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, var(--navy) 0%, var(--charcoal) 100%);
+            color: var(--silver);
+            line-height: 1.6;
+            min-height: 100vh;
+            padding: 20px;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        /* Glassmorphism effect */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        h1, h2, h3 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 15px;
+        }
+        
+        h1 {
+            font-size: 3rem;
+            text-align: center;
+            margin-bottom: 10px;
+            color: var(--gold);
+        }
+        
+        h2 {
+            font-size: 2rem;
+            color: var(--royal-blue);
+        }
+        
+        p {
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+        
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            padding: 40px 20px;
+            position: relative;
+        }
+        
+        .date-display {
+            font-size: 1.5rem;
+            color: var(--gold);
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
+        
+        /* Countdown */
+        .countdown {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin: 30px 0;
+        }
+        
+        .countdown-item {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 15px;
+            min-width: 80px;
+            text-align: center;
+        }
+        
+        .countdown-number {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--gold);
+        }
+        
+        .countdown-label {
+            font-size: 0.9rem;
+            color: var(--silver);
+        }
+        
+        /* Buttons */
+        button {
+            background: var(--royal-blue);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        button:hover {
+            background: #0e5fc9;
+            transform: translateY(-2px);
+        }
+        
+        /* Password Section */
+        .password-form {
+            display: flex;
+            gap: 10px;
+            margin: 20px 0;
+            flex-wrap: wrap;
+        }
+        
+        input[type="password"] {
+            flex: 1;
+            min-width: 200px;
+            padding: 12px;
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            background: rgba(0, 0, 0, 0.2);
+            color: white;
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .error-message {
+            color: #ff6b6b;
+            margin-top: 10px;
+            display: none;
+        }
+        
+        /* Spotify Section */
+        .spotify-container {
+            margin: 30px 0;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+        
+        /* Toggles Section */
+        .toggles {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin: 30px 0;
+        }
+        
+        /* Gallery */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 15px;
+            margin: 30px 0;
+        }
+        
+        .gallery-item {
+            border-radius: 12px;
+            overflow: hidden;
+            height: 150px;
+            cursor: pointer;
+            background: rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--silver);
+        }
+        
+        /* Guestbook */
+        textarea {
+            width: 100%;
+            padding: 12px;
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            background: rgba(0, 0, 0, 0.2);
+            color: white;
+            font-family: 'Inter', sans-serif;
+            margin-bottom: 15px;
+            min-height: 100px;
+        }
+        
+        /* Footer */
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            padding: 20px;
+            color: var(--silver);
+            font-size: 0.9rem;
+        }
+        
+        .signature {
+            font-style: italic;
+            color: var(--gold);
+            margin-top: 10px;
+            font-size: 1.1rem;
+        }
+        
+        /* Emoji mode */
+        .emoji-mode .emoji-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+        
+        .emoji {
+            position: absolute;
+            font-size: 24px;
+            opacity: 0.3;
+            animation: float 5s infinite ease-in-out;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(10deg); }
+        }
+        
+        /* Confetti */
+        #confetti-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 9999;
+            pointer-events: none;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.2rem;
+            }
+            
+            h2 {
+                font-size: 1.8rem;
+            }
+            
+            .countdown {
+                flex-wrap: wrap;
+            }
+            
+            .password-form {
+                flex-direction: column;
+            }
+            
+            input[type="password"] {
+                min-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <canvas id="confetti-canvas"></canvas>
+    
+    <div class="container">
+        <section class="hero glass-card">
+            <h1>Happy Birthday, Nurfaiz! 🎉</h1>
+            <div class="date-display">27 August 2025</div>
+            <p>Counting down to your big day — get ready for wishes, music, and a secret message.</p>
+            
+            <div class="countdown">
+                <div class="countdown-item">
+                    <div class="countdown-number" id="days">00</div>
+                    <div class="countdown-label">Days</div>
+                </div>
+                <div class="countdown-item">
+                    <div class="countdown-number" id="hours">00</div>
+                    <div class="countdown-label">Hours</div>
+                </div>
+                <div class="countdown-item">
+                    <div class="countdown-number" id="minutes">00</div>
+                    <div class="countdown-label">Minutes</div>
+                </div>
+                <div class="countdown-item">
+                    <div class="countdown-number" id="seconds">00</div>
+                    <div class="countdown-label">Seconds</div>
+                </div>
+            </div>
+            
+            <p id="countdown-label">Counting down to 27 Aug 2025 (WIB)</p>
+        </section>
+        
+        <section class="glass-card">
+            <h2>Celebrating You</h2>
+            <p>On this special day, we celebrate an incredible person—Nurfaiz. May this year bring you more happiness, success, and new adventures in your life journey.</p>
+            <p>Keep being an inspiring and spirited individual. The world needs more people like you!</p>
+        </section>
+        
+        <section class="glass-card">
+            <h2>Secret Message</h2>
+            <p>There's a special message just for you. Enter the secret code to unlock it.</p>
+            
+            <div class="password-form">
+                <input type="password" id="password-input" placeholder="Enter the secret code">
+                <button id="unlock-button">Unlock</button>
+            </div>
+            
+            <div class="error-message" id="password-error">Hmm… not that one. Try again?</div>
+            
+            <div id="secret-message" style="display: none;">
+                <h3>For Nurfaiz,</h3>
+                <p>Happy Birthday, Nurfaiz! 🥳</p>
+                <p>May this year bring you to your best version: complete health, a strong heart, a clear mind, abundant blessings, and steady steps toward all your dreams. Thank you for being my friend—a friend I can laugh with, share silly stories with, and have deep conversations with.</p>
+                <p>A little confession: I'm a sweet person (so they say 😌), so my task is to make your life sweeter. If your days sometimes feel bitter, just consider me your sugar supply. But don't worry, it's just the right amount of sweetness, so it won't send you to the dentist. 🍬</p>
+                <p>My prayer for you: may you always be strengthened when tired, calmed when overthinking, connected with good people, and facilitated in every effort. Keep going, even on the slow days—progress is still progress.</p>
+                <p>Thanks for existing and for staying, even when life gets chaotic. Today you must celebrate—big or simple, what matters is happiness.</p>
+                <p class="signature">with love, silvia</p>
+            </div>
+        </section>
+        
+        <section class="glass-card">
+            <h2>Birthday Playlist</h2>
+            <p>Listen to a special playlist to celebrate your day!</p>
+            
+            <div class="spotify-container">
+                <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/37i9dQZF1DWYtQSOiZF6hj?utm_source=generator&theme=0" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            </div>
+            
+            <a href="https://open.spotify.com/playlist/37i9dQZF1DWYtQSOiZF6hj" target="_blank">
+                <button>Open in Spotify</button>
+            </a>
+        </section>
+        
+        <section class="glass-card">
+            <h2>Fun Interactions</h2>
+            <p>Try these fun interactions!</p>
+            
+            <div class="toggles">
+                <button id="emoji-mode-btn">Emoji Mode 🎂</button>
+                <button id="blow-candle-btn">Blow the Candle</button>
+                <button id="shake-gift-btn">Shake a Gift 🎁</button>
+            </div>
+            
+            <div id="gift-result" style="margin-top: 20px; font-style: italic; text-align: center; display: none;"></div>
+        </section>
+        
+        <section class="glass-card">
+            <h2>Memory Gallery</h2>
+            <p>Some beautiful moments worth remembering (gallery placeholder).</p>
+            
+            <div class="gallery">
+                <div class="gallery-item">Photo 1</div>
+                <div class="gallery-item">Photo 2</div>
+                <div class="gallery-item">Photo 3</div>
+                <div class="gallery-item">Photo 4</div>
+            </div>
+        </section>
+        
+        <section class="glass-card">
+            <h2>Guestbook</h2>
+            <p>Leave a note for Nurfaiz</p>
+            
+            <textarea id="guestbook-text" placeholder="Write your kind message here..."></textarea>
+            <button id="submit-guestbook">Submit</button>
+            
+            <div id="guestbook-entries" style="margin-top: 30px;"></div>
+        </section>
+    </div>
+    
+    <footer>
+        <p>May all your wishes and dreams for this year come true. Always be happy, Nurfaiz! 🎂</p>
+        <p class="signature">with love, silvia</p>
+    </footer>
+
+    <script>
+        // Variabel yang dapat diubah
+        const PASSWORD = "FAI2708";
+        const EVENT_DATETIME = "2025-08-27T00:00:00+07:00";
+        const SPOTIFY_PLAYLIST_URL = "https://open.spotify.com/playlist/37i9dQZF1DWYtQSOiZF6hj";
+        
+        // Bank Quotes untuk fitur Shake a Gift
+        const QUOTES = [
+            "Grow older, level higher. 🎮",
+            "Small steps; big wins coming.",
+            "Health, peace, and pockets full of luck.",
+            "You've got this—today and every day.",
+            "More laughs, fewer worries."
+        ];
+        
+        // Inisialisasi
+        document.addEventListener('DOMContentLoaded', function() {
+            // Setup confetti
+            setupConfetti();
+            
+            // Mulai countdown
+            startCountdown();
+            
+            // Setup password protection
+            document.getElementById('unlock-button').addEventListener('click', checkPassword);
+            
+            // Setup fun interactions
+            document.getElementById('emoji-mode-btn').addEventListener('click', toggleEmojiMode);
+            document.getElementById('blow-candle-btn').addEventListener('click', blowCandle);
+            document.getElementById('shake-gift-btn').addEventListener('click', shakeGift);
+            
+            // Setup guestbook
+            document.getElementById('submit-guestbook').addEventListener('click', submitGuestbook);
+            loadGuestbookEntries();
+            
+            // Setup share button
+            setupShareButton();
+            
+            // Cek preferensi emoji mode dari localStorage
+            checkEmojiPreference();
+        });
+        
+        // Countdown timer
+        function startCountdown() {
+            const eventDate = new Date(EVENT_DATETIME);
+            
+            function updateCountdown() {
+                const now = new Date();
+                const timeDifference = eventDate - now;
+                
+                if (timeDifference <= 0) {
+                    // Waktu sudah tiba
+                    document.getElementById('days').textContent = '00';
+                    document.getElementById('hours').textContent = '00';
+                    document.getElementById('minutes').textContent = '00';
+                    document.getElementById('seconds').textContent = '00';
+                    
+                    // Tampilkan pesan dan trigger animasi kembang api
+                    showBirthdayMessage();
+                    return;
+                }
+                
+                const days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((timeDifference % (1000 * 60)) / 1000);
+                
+                document.getElementById('days').textContent = days.toString().padStart(2, '0');
+                document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
+                document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
+                document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
+            }
+            
+            updateCountdown();
+            setInterval(updateCountdown, 1000);
+        }
+        
+        // Tampilkan pesan ulang tahun
+        function showBirthdayMessage() {
+            // Dalam implementasi nyata, ini akan menampilkan overlay
+            alert("It's your day, Nurfaiz! 🎉");
+            triggerFireworks();
+        }
+        
+        // Trigger animasi kembang api
+        function triggerFireworks() {
+            // Implementasi kembang api akan ditambahkan
+            console.log("Fireworks triggered!");
+        }
+        
+        // Password check
+        function checkPassword() {
+            const input = document.getElementById('password-input').value;
+            const errorElement = document.getElementById('password-error');
+            const secretMessage = document.getElementById('secret-message');
+            
+            if (input === PASSWORD) {
+                secretMessage.style.display = 'block';
+                errorElement.style.display = 'none';
+            } else {
+                errorElement.style.display = 'block';
+                secretMessage.style.display = 'none';
+                
+                // Micro-interaction lucu
+                document.getElementById('password-input').style.animation = 'shake 0.5s';
+                setTimeout(() => {
+                    document.getElementById('password-input').style.animation = '';
+                }, 500);
+            }
+        }
+        
+        // Toggle Emoji Mode
+        function toggleEmojiMode() {
+            document.body.classList.toggle('emoji-mode');
+            
+            // Simpan preferensi ke localStorage
+            localStorage.setItem('emojiMode', document.body.classList.contains('emoji-mode'));
+            
+            // Jika emoji mode diaktifkan, tambahkan emoji ke background
+            if (document.body.classList.contains('emoji-mode')) {
+                createEmojiBackground();
+            } else {
+                // Hapus emoji background jika ada
+                const existingBackground = document.querySelector('.emoji-background');
+                if (existingBackground) {
+                    existingBackground.remove();
+                }
+            }
+        }
+        
+        // Cek preferensi emoji mode
+        function checkEmojiPreference() {
+            const emojiModeEnabled = localStorage.getItem('emojiMode') === 'true';
+            if (emojiModeEnabled) {
+                document.body.classList.add('emoji-mode');
+                createEmojiBackground();
+            }
+        }
+        
+        // Buat background emoji
+        function createEmojiBackground() {
+            // Hapus yang sudah ada jika ada
+            const existingBackground = document.querySelector('.emoji-background');
+            if (existingBackground) {
+                existingBackground.remove();
+            }
+            
+            const emojis = ['🎂', '🎁', '🎈', '🎉', '🥳'];
+            const container = document.createElement('div');
+            container.className = 'emoji-background';
+            
+            // Tambahkan emoji secara acak di seluruh halaman
+            for (let i = 0; i < 30; i++) {
+                const emoji = document.createElement('div');
+                emoji.className = 'emoji';
+                emoji.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+                emoji.style.left = `${Math.random() * 100}vw`;
+                emoji.style.top = `${Math.random() * 100}vh`;
+                emoji.style.animationDelay = `${Math.random() * 5}s`;
+                container.appendChild(emoji);
+            }
+            
+            document.body.appendChild(container);
+        }
+        
+        // Blow Candle
+        function blowCandle() {
+            // Animasi tiup lilin
+            alert("Candle blown! 💨");
+        }
+        
+        // Shake Gift
+        function shakeGift() {
+            const giftResult = document.getElementById('gift-result');
+            
+            // Animasi goyang
+            const giftButton = document.getElementById('shake-gift-btn');
+            giftButton.style.animation = 'shake 0.5s';
+            
+            setTimeout(() => {
+                giftButton.style.animation = '';
+                
+                // Tampilkan quote acak
+                const randomQuote = QUOTES[Math.floor(Math.random() * QUOTES.length)];
+                giftResult.textContent = randomQuote;
+                giftResult.style.display = 'block';
+            }, 500);
+        }
+        
+        // Guestbook
+        function submitGuestbook() {
+            const textarea = document.getElementById('guestbook-text');
+            const message = textarea.value.trim();
+            
+            if (message) {
+                // Simpan ke localStorage
+                const entries = JSON.parse(localStorage.getItem('guestbookEntries') || '[]');
+                entries.push({
+                    message: message,
+                    date: new Date().toLocaleDateString('en-US')
+                });
+                
+                localStorage.setItem('guestbookEntries', JSON.stringify(entries));
+                
+                // Kosongkan textarea
+                textarea.value = '';
+                
+                // Muat ulang entri
+                loadGuestbookEntries();
+            }
+        }
+        
+        function loadGuestbookEntries() {
+            const entriesContainer = document.getElementById('guestbook-entries');
+            const entries = JSON.parse(localStorage.getItem('guestbookEntries') || '[]');
+            
+            if (entries.length === 0) {
+                entriesContainer.innerHTML = '<p>No entries yet. Be the first to leave a message!</p>';
+                return;
+            }
+            
+            let html = '<h3>Messages:</h3>';
+            entries.forEach(entry => {
+                html += `<div class="guestbook-entry" style="margin-bottom: 15px; padding-bottom: 15px; border-bottom: 1px solid rgba(255,255,255,0.1);">
+                    <p>${entry.message}</p>
+                    <small>${entry.date}</small>
+                </div>`;
+            });
+            
+            entriesContainer.innerHTML = html;
+        }
+        
+        // Setup Share Button
+        function setupShareButton() {
+            // Dalam implementasi nyata, ini akan membuat tombol share
+        }
+        
+        // Setup Confetti
+        function setupConfetti() {
+            // Implementasi confetti akan ditambahkan
+        }
+        
+        // Tambahkan keyframes untuk animasi shake
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes shake {
+                0%, 100% { transform: translateX(0); }
+                10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
+                20%, 40%, 60%, 80% { transform: translateX(5px); }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+</html>
